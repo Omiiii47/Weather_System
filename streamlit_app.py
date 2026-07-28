@@ -2,14 +2,8 @@ import streamlit as st
 import sys
 import io
 import json
-import os
 from pathlib import Path
 from contextlib import redirect_stdout
-
-# Load Streamlit Cloud secrets into env vars for sub-processes
-for key in ("GOOGLE_API_KEY", "OPENWEATHER_API_KEY"):
-    if key in st.secrets:
-        os.environ[key] = st.secrets[key]
 
 sys.path.insert(0, str(Path(__file__).parent / "agents"))
 from orchestrator import WeatherBriefOrchestrator
