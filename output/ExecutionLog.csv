@@ -1,0 +1,7 @@
+timestamp,tool,params_hash,status_code,retry_after_s,attempt,latency_ms,cache_hit,circuit_state,outcome_hash
+2026-07-28T06:21:43.814267Z,OpenWeatherTools,6a3ad757,200,0,1,0,False,closed,
+2026-07-28T06:22:00.490162Z,WikipediaTools,56d55215,200,0,1,5558.631499608357,False,closed,
+2026-07-28T06:22:00.490708Z,HackerNewsTools,5d4db9a2,200,0,1,5558.631499608357,False,closed,
+2026-07-28T06:25:43.324453Z,OpenWeatherTools,3a3c56eb,200,0,1,0,False,closed,
+2026-07-28T06:25:58.775439Z,WikipediaTools,8f8856cb,200,0,1,5150.328556696574,False,closed,
+2026-07-28T06:25:58.775439Z,HackerNewsTools,5d4db9a2,200,0,1,5150.328556696574,False,closed,

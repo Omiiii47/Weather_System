@@ -1,0 +1,66 @@
+[
+  {
+    "timestamp": "2026-07-28T06:25:38.367505Z",
+    "agent": "PlannerAgent",
+    "status": "STARTED",
+    "details": {
+      "city": "Andheri"
+    }
+  },
+  {
+    "timestamp": "2026-07-28T06:25:43.324453Z",
+    "agent": "PlannerAgent",
+    "status": "COMPLETED",
+    "details": {
+      "plan": "Workflow created"
+    }
+  },
+  {
+    "timestamp": "2026-07-28T06:25:43.324453Z",
+    "agent": "ExecutorAgent",
+    "status": "STARTED",
+    "details": {
+      "task": "Data gathering"
+    }
+  },
+  {
+    "timestamp": "2026-07-28T06:25:58.775439Z",
+    "agent": "ExecutorAgent",
+    "status": "COMPLETED",
+    "details": {
+      "data_collected": true
+    }
+  },
+  {
+    "timestamp": "2026-07-28T06:25:58.775439Z",
+    "agent": "VerifierAgent",
+    "status": "STARTED",
+    "details": {
+      "task": "Data verification"
+    }
+  },
+  {
+    "timestamp": "2026-07-28T06:26:02.892944Z",
+    "agent": "VerifierAgent",
+    "status": "COMPLETED",
+    "details": {
+      "verification": "passed"
+    }
+  },
+  {
+    "timestamp": "2026-07-28T06:26:02.892944Z",
+    "agent": "SummarizerAgent",
+    "status": "STARTED",
+    "details": {
+      "task": "Brief generation"
+    }
+  },
+  {
+    "timestamp": "2026-07-28T06:26:07.809841Z",
+    "agent": "SummarizerAgent",
+    "status": "COMPLETED",
+    "details": {
+      "output": "brief.md & brief.json"
+    }
+  }
+]
