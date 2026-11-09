@@ -5,11 +5,35 @@ import json
 import os
 from pathlib import Path
 from contextlib import redirect_stdout
+from dotenv import load_dotenv
 
-# Load Streamlit Cloud secrets into env vars for sub-processes
+# Load local environment variables first. Streamlit secrets take precedence
+# when real values are configured for deployment.
+load_dotenv()
+
+def _load_secret(key: str) -> None:
+    try:
+        value = st.secrets.get(key)
+    except FileNotFoundError:
+        return
+    if value and not str(value).startswith("your-"):
+        os.environ[key] = str(value)
+
 for key in ("GOOGLE_API_KEY", "OPENWEATHER_API_KEY"):
-    if key in st.secrets:
-        os.environ[key] = st.secrets[key]
+    _load_secret(key)
+
+missing_keys = [
+    key for key in ("GOOGLE_API_KEY", "OPENWEATHER_API_KEY") if not os.environ.get(key)
+]
+if missing_keys:
+    st.error(
+        "Missing API key(s): "
+        + ", ".join(f"`{key}`" for key in missing_keys)
+        + "\n\nSet them as top-level entries in **Manage app → Settings → Secrets** "
+        '(Streamlit Cloud), e.g. `OPENWEATHER_API_KEY = "..."`, then restart the app. '
+        "For local runs, put them in `.env`."
+    )
+    st.stop()
 
 sys.path.insert(0, str(Path(__file__).parent / "agents"))
 from orchestrator import WeatherBriefOrchestrator
