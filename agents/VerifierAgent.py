@@ -6,7 +6,7 @@ import json
 verifier_agent = Agent(
     name="VerifierAgent",
     role="Validates consistency, alignment, and deduplication across all data sources",
-    model=Gemini(id="gemini-3.1-flash-lite-preview"),
+    model=Gemini(id="gemini-3.5-flash-lite"),
     add_name_to_context=True,
     markdown=True,
     instructions=dedent("""

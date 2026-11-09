@@ -6,7 +6,7 @@ from planner_prompt import planner_instructions
 planner_agent = Agent(
     name="PlannerAgent",
     role="Plans multi-agent workflow for generating a 24-hour weather risk brief.",
-    model=Gemini(id="gemini-3.1-flash-lite-preview"),
+    model=Gemini(id="gemini-3.5-flash-lite"),
     add_name_to_context=True,
     markdown=True,
     instructions=planner_instructions

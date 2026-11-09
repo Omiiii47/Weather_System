@@ -18,7 +18,7 @@ Multi-agent AI weather briefing system. Given a city name, it produces a 24-hour
 PlannerAgent → ExecutorAgent → VerifierAgent → SummarizerAgent
 ```
 
-All agents use **agno** (not LangChain/CrewAI) + `agno.models.google.Gemini` with id `gemini-3.1-flash-lite-preview`. Executor tools: `OpenWeatherTools`, `WikipediaTools`, `HackerNewsTools`.
+All agents use **agno** (not LangChain/CrewAI) + `agno.models.google.Gemini` with id `gemini-3.5-flash-lite` (GA; the older `gemini-3.1-flash-lite-preview` returns 404 on current API keys). Executor tools: `OpenWeatherTools`, `WikipediaTools`, `HackerNewsTools`.
 
 ## Import convention
 

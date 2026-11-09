@@ -7,7 +7,7 @@ from pathlib import Path
 summarizer_agent = Agent(
     name="SummarizerAgent",
     role="Produces clear, actionable resident-facing brief and structured machine-readable report",
-    model=Gemini(id="gemini-3.1-flash-lite-preview"),
+    model=Gemini(id="gemini-3.5-flash-lite"),
     add_name_to_context=True,
     markdown=True,
     instructions=dedent("""

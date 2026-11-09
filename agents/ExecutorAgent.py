@@ -15,7 +15,7 @@ load_dotenv()
 executor_agent = Agent(
     name="ExecutorAgent",
     role="Invokes tool adapters with retry logic, circuit breakers, and caching",
-    model=Gemini(id="gemini-3.1-flash-lite-preview"),
+    model=Gemini(id="gemini-3.5-flash-lite"),
     tools=[
         OpenWeatherTools(),
         WikipediaTools(),
